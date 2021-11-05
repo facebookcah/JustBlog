@@ -1,0 +1,95 @@
+﻿@model FA.JustBlog.Core.Models.Post
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var categories = ViewBag.categories as Dictionary<int, string>;
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Post</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", onchange = "changeUrl('Title','UrlSlug')" } })
+            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ShortDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ShortDescription, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ShortDescription, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PostContent, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PostContent, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PostContent, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UrlSlug, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.UrlSlug, new { htmlAttributes = new { @class = "form-control", @readonly = true } })
+            @Html.ValidationMessageFor(model => model.UrlSlug, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <input name="Published" value="@ViewBag.published" hidden />
+    <input name="PostedOn" value="@ViewBag.postedOn" hidden />
+    <input name="Modifiled" value="@ViewBag.modifiled" hidden />
+    <input name="Status" value="@ViewBag.status" hidden /> 
+    <input name="ViewCount" value="@ViewBag.viewCount" hidden /> 
+    <input name="RateCount" value="@ViewBag.rateCount" hidden /> 
+    <input name="TotalRate" value="@ViewBag.totalRate " hidden /> 
+    <input name="Rate" value="@ViewBag.Rate " hidden /> 
+    <input name="CreatedOn" value="@ViewBag.createdOn " hidden /> 
+    
+    
+    
+    
+
+    <div class="form-group">
+
+        <div class="col-md-10">
+            <label for="CategoryId">Danh mục</label>
+            <select name="CategoryId" class="form-control">
+                <option disabled>Select category</option>
+                @foreach (var item in categories)
+                {
+
+                    <option value=@item.Key>@item.Value</option>
+                }
+            </select>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-warning mt-2" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,37 @@
+﻿using FA.JustBlog.Core.EntityBase;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FA.JustBlog.Core.Models
+{
+    public class Comment : BaseEntity
+    {
+        [Required(ErrorMessage = "Tên không được để trống")]
+        [MaxLength(225, ErrorMessage = "Tên không được quá 225 kí tự")]
+        [MinLength(3, ErrorMessage = "Tên không được ít hơn 3 kí tự")]
+        public string Name { get; set; }
+
+        [Required(ErrorMessage = "Email không được để trống")]
+        [EmailAddress(ErrorMessage = "Email không đúng định dạng")]
+        public string Email { get; set; }
+
+
+        public string CommentHeader { get; set; }
+
+        [Required(ErrorMessage = "Comment không được để trống")]
+        [MaxLength(225, ErrorMessage = "Comment được vượt quá 225 kí tự")]
+        [MinLength(3, ErrorMessage = "Comment không được ít hơn 3 kí tự")]
+        public string CommentText { get; set; }
+        public DateTime DateTime { get; set; }
+
+        public int? PostId { get; set; }
+        [ForeignKey("PostId")]
+        public virtual Post Post { get; set; }
+
+    }
+}

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<FA.JustBlog.ViewModels.Post.PostViewClientModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All posts!</h2>
+<hr />
+@foreach (var item in Model)
+{
+    <div>
+        <h1 style="color:aqua;">
+            @Html.ActionLink(@item.Title, "Details", new { Id = @item.Id })
+        </h1>
+        <p style="color:gray;">
+            Posted @item.PostedOn with @item.rate rate with @item.ViewCount view(s)
+        </p>
+        <p>
+            @item.PostContent
+        </p>
+    </div>
+    <hr />
+
+}
+

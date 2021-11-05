@@ -1,0 +1,15 @@
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\bin\Debug\FA.JustBlog.UI.exe.config
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\bin\Debug\FA.JustBlog.UI.exe
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\bin\Debug\FA.JustBlog.UI.pdb
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\bin\Debug\EntityFramework.dll
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\bin\Debug\FA.JustBlog.Core.dll
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\bin\Debug\FA.JustBlog.Core.pdb
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\bin\Debug\FA.JustBlog.Core.dll.config
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\bin\Debug\EntityFramework.xml
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\obj\Debug\FA.JustBlog.UI.csprojAssemblyReference.cache
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\obj\Debug\FA.JustBlog.UI.csproj.CoreCompileInputs.cache
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\obj\Debug\FA.JustBlog.UI.csproj.CopyComplete
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\obj\Debug\FA.JustBlog.UI.exe
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.UI\obj\Debug\FA.JustBlog.UI.pdb

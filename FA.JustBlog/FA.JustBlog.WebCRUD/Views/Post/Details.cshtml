@@ -1,0 +1,5 @@
+﻿@model FA.JustBlog.ViewModels.Post.PostViewClientModel
+
+<p style="color:gray;text-align:right;font-size:medium;">@Model.PostedOn.DayOfWeek, @Model.PostedOn.ToString("dd/MM/yyyy - HH:mm")</p>
+<h1>@Html.DisplayFor(m => m.Title)</h1>
+<p>@Html.DisplayFor(m => m.PostContent)</p>

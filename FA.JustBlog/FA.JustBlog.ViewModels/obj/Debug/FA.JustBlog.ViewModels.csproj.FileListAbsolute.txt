@@ -1,0 +1,17 @@
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\bin\Debug\FA.JustBlog.ViewModels.dll.config
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\bin\Debug\FA.JustBlog.ViewModels.dll
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\bin\Debug\FA.JustBlog.ViewModels.pdb
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\bin\Debug\EntityFramework.dll
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\bin\Debug\FA.JustBlog.Core.dll
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\bin\Debug\FA.JustBlog.Core.pdb
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\bin\Debug\FA.JustBlog.Core.dll.config
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\bin\Debug\EntityFramework.xml
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\obj\Debug\FA.JustBlog.ViewModels.csprojAssemblyReference.cache
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\obj\Debug\FA.JustBlog.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\obj\Debug\FA.JustBlog.ViewModels.csproj.CopyComplete
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\obj\Debug\FA.JustBlog.ViewModels.dll
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\obj\Debug\FA.JustBlog.ViewModels.pdb
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\bin\Debug\FA.JustBlog.Common.dll
+C:\Users\84835\source\repos\FA.JustBlog\FA.JustBlog.ViewModels\bin\Debug\FA.JustBlog.Common.pdb
