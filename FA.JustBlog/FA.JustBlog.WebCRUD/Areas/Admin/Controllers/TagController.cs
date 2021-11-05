@@ -36,7 +36,7 @@ namespace FA.JustBlog.WebCRUD.Areas.Admin.Controllers
         public ActionResult Edit(int id)
         {
             var tag = this.tagService.GotoEdit(id);
-            ViewBag.status = tag.Status;
+            //ViewBag.status = tag.Status;
             ViewBag.createdOn = tag.CreatedOn;
             var posts = this.postService.GetDopList();
             ViewBag.dropListPost = posts;

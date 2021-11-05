@@ -159,5 +159,11 @@ namespace FA.JustBlog.Services.Posts
             var postViewModels = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(posts);
             return postViewModels;
         }
+
+        public IEnumerable<PostViewClientModel> GetPostByTitleOrSortDes(string findString)
+        {
+            var posts=this.unitOfWork.PostRepository.Find(p => p.Title == findString || p.ShortDescription == findString);
+            return Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewClientModel>>(posts);
+        }
     }
 }

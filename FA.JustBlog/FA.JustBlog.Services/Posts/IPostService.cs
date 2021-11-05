@@ -24,6 +24,7 @@ namespace FA.JustBlog.Services.Posts
         IEnumerable<PostViewModel> InterestingPost();
         IEnumerable<PostViewModel> PublishedPost();
         IEnumerable<PostViewModel> UnPublishedPost();
+        IEnumerable<PostViewClientModel> GetPostByTitleOrSortDes(string findString);
         void Remove(int id);
         void Edit(Post post);
 

@@ -55,7 +55,7 @@ namespace FA.JustBlog.WebCRUD.Areas.Admin.Controllers
         public ActionResult Edit(int id)
         {
             var category = this.categoryService.GetToEdit(id);
-            ViewBag.status = category.Status;
+            //ViewBag.status = category.Status;
             ViewBag.createdOn = category.CreatedOn;
             return View(category);
         }

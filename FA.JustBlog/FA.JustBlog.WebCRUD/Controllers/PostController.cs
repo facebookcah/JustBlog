@@ -3,6 +3,7 @@ using FA.JustBlog.Core.Models;
 using FA.JustBlog.Services.Categories;
 using FA.JustBlog.Services.Posts;
 using FA.JustBlog.WebCRUD.Filters;
+using FA.JustBlog.WebCRUD.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,17 +60,5 @@ namespace FA.JustBlog.WebCRUD.Controllers
             return View("_ListPost", posts);
         }
 
-        //public ActionResult LastestPost()
-        //{
-        //    var list = unitOfWork.PostRepository.GetAll();
-
-        //    return View("Index",list);
-        //}
-        //public ActionResult MostViewedPosts()
-        //{
-        //    var list = unitOfWork.PostRepository.GetAll().OrderByDescending(p => p.ViewCount).Take(5);
-
-        //    return View("_ListPost",list);
-        //}
     }
 }

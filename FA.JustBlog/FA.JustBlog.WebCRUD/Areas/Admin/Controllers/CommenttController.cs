@@ -56,7 +56,13 @@ namespace FA.JustBlog.WebCRUD.Areas.Admin.Controllers
         
             ViewBag.status = comment.Status;
             ViewBag.dateTime = comment.DateTime;
-            
+            var posts = this.postService.GetAllForAdmin();
+            IDictionary<int, string> postss = new Dictionary<int, string>();
+            foreach (var item in posts)
+            {
+                postss.Add(item.Id, item.Title);
+            }
+            ViewBag.posts = postss;
 
             return View(comment);
         }
