@@ -21,7 +21,7 @@ namespace FA.JustBlog.Core.Responsitories
         public override void Add(Post entity)
         {
             entity.PostedOn = DateTime.Now;
-            entity.Published = true;
+            //entity.Published = true;
             entity.Modifiled = true;
             base.Add(entity);
         }

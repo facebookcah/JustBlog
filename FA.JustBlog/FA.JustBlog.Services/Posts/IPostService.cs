@@ -19,7 +19,11 @@ namespace FA.JustBlog.Services.Posts
         IEnumerable<PostViewClientModel> GetPostFromCategory(int categoryId); 
         IEnumerable<DropListPost> GetDopList(); 
         IEnumerable<PostViewModel> GetAllForAdmin();
-
+        IEnumerable<PostViewModel> LastestPostAdmin();
+        IEnumerable<PostViewModel> MostViewedPostsAdmin();
+        IEnumerable<PostViewModel> InterestingPost();
+        IEnumerable<PostViewModel> PublishedPost();
+        IEnumerable<PostViewModel> UnPublishedPost();
         void Remove(int id);
         void Edit(Post post);
 

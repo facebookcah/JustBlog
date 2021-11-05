@@ -8,44 +8,39 @@
 }
 <style>
     table tbody tr td {
-    padding:10px;
-   
-    border:5px;
-    margin-left:10px;
-    margin-right:10px;
-   
-    
+        padding: 10px;
+        border: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
+
     a {
-        text-decoration:none;
-        
+        text-decoration: none;
     }
 </style>
-<h2>List of Posts</h2>
+<h2>Published Posts</h2>
 <hr />
 
 <table>
     <tbody>
         <tr>
             <td>
-                <button class="btn-sm btn-outline-warning">@Html.ActionLink("Create New", "Create")</button>
+                <button class="btn-sm btn-outline-warning"> @Html.ActionLink("Create New", "Create")</button>
             </td>
             <td>
-                <button class="btn-sm btn-block"> @Html.ActionLink("Lastest posts", "LastestPostsAdmin", "Post", "/admin/post", "")</button>
+                <button class="btn-sm btn-block">  @Html.ActionLink("Lastest posts", "LastestPostsAdmin", "Post", "/admin/post", "")</button>
             </td>
             <td>
-                <button class="btn-sm btn-block"> @Html.ActionLink("Most viewd posts", "MostViewedPosts")</button>
-</td>
+                <button class="btn-sm btn-block">   @Html.ActionLink("Most viewd posts", "MostViewedPosts")</button>
+            </td>
             <td>
-                <button class="btn-sm btn-block"> @Html.ActionLink("Most Interesting Posts", "InterestingPost")</button>
-</td>
-            <td>
-                <button class="btn-sm btn-block">  @Html.ActionLink("Published Posts", "PublishedPost")</button>
-</td>
+                <button class="btn-sm btn-block">  @Html.ActionLink("Most Interesting Posts", "InterestingPost")</button>
+            </td>
+            
 
             <td>
                 <button class="btn-sm btn-block"> @Html.ActionLink("Un-Published Posts,", "UnPublishedPost")</button>
-</td>
+            </td>
         </tr>
 
 
@@ -71,6 +66,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Status)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Published)
+        </th>
         <th></th>
     </tr>
 
@@ -93,6 +91,9 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Status)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Published)
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

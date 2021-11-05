@@ -1,0 +1,106 @@
+﻿@model IEnumerable<FA.JustBlog.ViewModels.Post.PostViewModel>
+@using FA.JustBlog.Core.Enums
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<style>
+    table tbody tr td {
+        padding: 10px;
+        border: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+</style>
+<h2>Most view posts</h2>
+<hr />
+
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <button class="btn-sm btn-outline-warning"> @Html.ActionLink("Create New", "Create")</button>
+            </td>
+            <td>
+                <button class="btn-sm btn-block">  @Html.ActionLink("Lastest posts", "LastestPostsAdmin", "Post", "/admin/post", "")</button>
+            </td>
+            <td>
+                <button class="btn-sm btn-block">     @Html.ActionLink("Most Interesting Posts", "InterestingPost")</button>
+            </td>
+            <td>
+                <button class="btn-sm btn-block">   @Html.ActionLink("Published Posts", "PublishedPost")</button>
+            </td>
+
+            <td>
+                <button class="btn-sm btn-block">  @Html.ActionLink("Un-Published Posts,", "UnPublishedPost")</button>
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ViewCount)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViewCount)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

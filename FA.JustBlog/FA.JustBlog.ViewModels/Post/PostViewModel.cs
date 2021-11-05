@@ -29,8 +29,13 @@ namespace FA.JustBlog.ViewModels.Post
         [Column(TypeName = "datetime2")]
 
         public DateTime UpdatedOn { get; set; }
-   
-     
-        
+        [Required]
+        public bool Published { get; set; }
+        public double Rate { get; set; }
+        public int ViewCount { get; set; }
+       
+
+
+
     }
 }

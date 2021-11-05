@@ -6,14 +6,13 @@
     var categories = ViewBag.categories as Dictionary<int, string>;
 }
 
-<h2>Edit</h2>
+<h2>Edit post</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>Post</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.Id)
@@ -51,20 +50,26 @@
             @Html.ValidationMessageFor(model => model.UrlSlug, "", new { @class = "text-danger" })
         </div>
     </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Published, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10 checkbox">
+            @Html.EditorFor(model => model.Published)
+        </div>
+    </div>
 
-    <input name="Published" value="@ViewBag.published" hidden />
+    
     <input name="PostedOn" value="@ViewBag.postedOn" hidden />
     <input name="Modifiled" value="@ViewBag.modifiled" hidden />
-    <input name="Status" value="@ViewBag.status" hidden /> 
-    <input name="ViewCount" value="@ViewBag.viewCount" hidden /> 
-    <input name="RateCount" value="@ViewBag.rateCount" hidden /> 
-    <input name="TotalRate" value="@ViewBag.totalRate " hidden /> 
-    <input name="Rate" value="@ViewBag.Rate " hidden /> 
-    <input name="CreatedOn" value="@ViewBag.createdOn " hidden /> 
-    
-    
-    
-    
+    <input name="Status" value="@ViewBag.status" hidden />
+    <input name="ViewCount" value="@ViewBag.viewCount" hidden />
+    <input name="RateCount" value="@ViewBag.rateCount" hidden />
+    <input name="TotalRate" value="@ViewBag.totalRate " hidden />
+    <input name="Rate" value="@ViewBag.Rate " hidden />
+    <input name="CreatedOn" value="@ViewBag.createdOn " hidden />
+
+
+
+
 
     <div class="form-group">
 

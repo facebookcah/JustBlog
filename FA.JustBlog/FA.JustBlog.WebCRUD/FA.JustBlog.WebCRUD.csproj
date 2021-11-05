@@ -247,6 +247,11 @@
     <Content Include="Areas\Admin\Views\Commentt\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Commentt\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Post\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\_ListPost.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\_ListPostView.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\_ListPostInteresting.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\_PublishedView.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\_UnPublishedView.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

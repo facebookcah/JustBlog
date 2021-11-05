@@ -4,13 +4,14 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-    var enums=ViewBag.status as IDictionary<int,string>;
+    var enums = ViewBag.status as IDictionary<int, string>;
 }
 
 
-
+<h2>List of categories</h2>
+<hr />
 <p>
-    @Html.ActionLink("Create New", "Create","Category")
+    @Html.ActionLink("Create New", "Create", "Category")
 </p>
 <table class="table">
     <tr>
@@ -23,7 +24,7 @@
         <th>
             @Html.DisplayNameFor(model => model.CreatedOn)
         </th>
-          <th>
+        <th>
             @Html.DisplayNameFor(model => model.UpdatedOn)
         </th>
         <th>
@@ -32,30 +33,31 @@
         <th>Action</th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Id)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CreatedOn)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.UpdatedOn)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Status)
-    </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
 
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Detail", "Details", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-    </td>
-</tr>
-}
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Detail", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>

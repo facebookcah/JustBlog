@@ -13,18 +13,18 @@ using System.Web.Mvc;
 
 namespace FA.JustBlog.WebCRUD.Areas.Admin.Controllers
 {
-    
+
     public class PostController : Controller
     {
         private readonly IPostService postService;
         private readonly ICategoryService categoryService;
-        public PostController(IPostService postService,ICategoryService categoryService)
+        public PostController(IPostService postService, ICategoryService categoryService)
         {
             this.postService = postService;
             this.categoryService = categoryService;
         }
 
-       
+
         public ActionResult Index()
         {
             var list = this.postService.GetAllForAdmin();
@@ -33,7 +33,7 @@ namespace FA.JustBlog.WebCRUD.Areas.Admin.Controllers
         public ActionResult Create()
         {
             var categories = this.categoryService.GetAll();
-            IDictionary<int,string> categoryIds = new Dictionary<int,string>();
+            IDictionary<int, string> categoryIds = new Dictionary<int, string>();
             foreach (var item in categories)
             {
                 categoryIds.Add(item.Id, item.Name);
@@ -51,7 +51,7 @@ namespace FA.JustBlog.WebCRUD.Areas.Admin.Controllers
             var response = this.postService.Create(post);
             if (response.IsSuccessed)
             {
-                
+
                 return RedirectToAction(nameof(Index));
             }
             ModelState.AddModelError(string.Empty, response.ErrorMessage);
@@ -77,7 +77,7 @@ namespace FA.JustBlog.WebCRUD.Areas.Admin.Controllers
         public ActionResult Edit(int id)
         {
 
-           var post= this.postService.GoToEdit(id);
+            var post = this.postService.GoToEdit(id);
             ViewBag.status = post.Status;
             ViewBag.published = post.Published;
             ViewBag.Modifiled = post.Modifiled;
@@ -117,6 +117,34 @@ namespace FA.JustBlog.WebCRUD.Areas.Admin.Controllers
                 return View(login);
             }
             return RedirectToAction("Index");
+        }
+
+        public ActionResult LastestPostsAdmin()
+        {
+            var posts = this.postService.LastestPostAdmin();
+            return View("_ListPost", posts);
+        }
+        public ActionResult MostViewedPosts()
+        {
+            var posts = this.postService.MostViewedPostsAdmin();
+            return View("_ListPostView", posts);
+        }
+
+
+        public ActionResult InterestingPost()
+        {
+            var posts = this.postService.InterestingPost();
+            return View("_ListPostInteresting", posts);
+        }
+        public ActionResult PublishedPost()
+        {
+            var posts = this.postService.PublishedPost();
+            return View("_PublishedView", posts);
+        }
+        public ActionResult UnPublishedPost()
+        {
+            var posts = this.postService.UnPublishedPost();
+            return View("_UnPublishedView", posts);
         }
     }
 }

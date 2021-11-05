@@ -32,7 +32,10 @@ namespace FA.JustBlog.ViewModels.Post
         public int ViewCount { get; set; }
         public int RateCount { get; set; }
         public int TotalRate { get; set; }
-        
+        [Required]
+        [Display(Name ="Xuất bản")]
+        public bool Published { get; set; }
+
         public int CategoryId { get; set; }
         
     }

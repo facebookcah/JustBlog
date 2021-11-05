@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FA.JustBlog.Core.Enums;
 using FA.JustBlog.Core.Infrastructures;
 using FA.JustBlog.Core.Models;
 using FA.JustBlog.ViewModels.Post;
@@ -38,7 +39,8 @@ namespace FA.JustBlog.Services.Posts
                     ViewCount = request.ViewCount,
                     RateCount = request.RateCount,
                     TotalRate = request.TotalRate,
-                    ShortDescription = request.ShortDescription
+                    ShortDescription = request.ShortDescription,
+                    Published = request.Published
                     
                 };
                 this.unitOfWork.PostRepository.Add(post);
@@ -56,7 +58,7 @@ namespace FA.JustBlog.Services.Posts
 
         public IEnumerable<PostViewClientModel> GetAll()
         {
-            var posts = this.unitOfWork.PostRepository.GetAll();
+            var posts = this.unitOfWork.PostRepository.GetAll().Where(p=>p.Published==true&&p.Status==Status.Active);
             var postViewModels = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewClientModel>>(posts);
 
             return postViewModels;
@@ -105,23 +107,57 @@ namespace FA.JustBlog.Services.Posts
 
         public IEnumerable<PostViewClientModel> LastestPost()
         {
-            var posts = this.unitOfWork.PostRepository.GetAll().OrderByDescending(p=>p.PostedOn).Take(5);
+            var posts = this.unitOfWork.PostRepository.GetAll().Where(p=>p.Status==Status.Active&&p.Published==true).OrderByDescending(p=>p.PostedOn).Take(5);
             var postViewModels = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewClientModel>>(posts);
+            return postViewModels;
+        }
+
+        public IEnumerable<PostViewModel> LastestPostAdmin()
+        {
+            var posts = this.unitOfWork.PostRepository.GetAll().OrderByDescending(p => p.PostedOn).Take(5);
+            var postViewModels = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(posts);
             return postViewModels;
         }
 
         public IEnumerable<PostViewClientModel> MostViewedPosts()
         {
-            var posts = this.unitOfWork.PostRepository.GetAll().OrderByDescending(p => p.ViewCount).Take(5);
+            var posts = this.unitOfWork.PostRepository.GetAll().Where(p => p.Status == Status.Active && p.Published == true).OrderByDescending(p => p.ViewCount).Take(5);
             var postViewModels = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewClientModel>>(posts);
+            return postViewModels;
+        }
+        
+        public IEnumerable<PostViewModel> MostViewedPostsAdmin()
+        {
+            var posts = this.unitOfWork.PostRepository.GetAll().OrderByDescending(p => p.ViewCount).Take(5);
+            var postViewModels = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(posts);
+            return postViewModels;
+        }
+        public IEnumerable<PostViewModel> InterestingPost()
+        {
+            var posts = this.unitOfWork.PostRepository.GetAll().OrderByDescending(p => p.rate).Take(5);
+            var postViewModels = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(posts);
             return postViewModels;
         }
 
         public IEnumerable<PostViewClientModel> GetPostFromCategory(int categoryId)
         {
-            var posts=this.unitOfWork.PostRepository.GetAll().Where(p=>p.CategoryId==categoryId);
+            var posts=this.unitOfWork.PostRepository.GetAll().Where(p=>p.CategoryId==categoryId &&p.Published==true&&p.Status==Status.Active);
             return  Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewClientModel>>(posts);
 
+        }
+
+        public IEnumerable<PostViewModel> PublishedPost()
+        {
+            var posts = this.unitOfWork.PostRepository.GetAll().Where(p=>p.Published==true);
+            var postViewModels = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(posts);
+            return postViewModels;
+        }
+
+        public IEnumerable<PostViewModel> UnPublishedPost()
+        {
+            var posts = this.unitOfWork.PostRepository.GetAll().Where(p => p.Published == false);
+            var postViewModels = Mapper.Map<IEnumerable<Post>, IEnumerable<PostViewModel>>(posts);
+            return postViewModels;
         }
     }
 }
